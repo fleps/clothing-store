@@ -1,23 +1,42 @@
-import { useState } from 'react'
+import CategoryItem from './components/category-item/category-item.component.jsx';
+import './categories.styles.scss';
 
 const App = () => {
-  const [count, setCount] = useState(0)
+
+  const categories = [
+  {
+    "id": 1,
+    "title": "hats",
+    "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
+  },
+  {
+    "id": 2,
+    "title": "jackets",
+    "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
+  },
+  {
+    "id": 3,
+    "title": "sneakers",
+    "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
+  },
+  {
+    "id": 4,
+    "title": "womens",
+    "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
+  },
+  {
+    "id": 5,
+    "title": "mens",
+    "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
+  }
+]
 
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='categories-container'>
+      { categories.map(category => {
+        return <CategoryItem key={category.id} category={category} />
+      })}
+    </div>
   )
 }
 
