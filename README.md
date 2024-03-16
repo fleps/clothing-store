@@ -7,9 +7,15 @@ The course is not updated to use latest technologies, so I challenged myself to 
 ## Project Technical Details
 
 - Node v18.16
-- Project Boilerplate created using [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) v4.2 (Vite 5.1)
+- Project Boilerplate created using [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) v4.2 (Vite 5.1) (course uses CRA)
 - React + react-dom v18.2
 - React-router v6.22
 - Sass v1.72
 - Firebase v10.9
+
+## Features / Functionalities
+- Responsive layout
+- Totally custom style (different from course provided ones)
+- Login / Registration using Firebase auth with Google and Email/Password options
+
 
