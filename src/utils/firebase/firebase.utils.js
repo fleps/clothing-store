@@ -25,7 +25,7 @@ googleProvider.setCustomParameters({
 });
 
 // Google Auth
-export const auth = getAuth();
+export const auth = getAuth(firebaseApp);
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
 
 // Firebase authenticate / create user from Google Login
