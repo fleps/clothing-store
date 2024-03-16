@@ -5,7 +5,7 @@ import './login.styles.scss';
 const Login = () => {
 
   return (
-    <div className='login-wrapper'>
+    <div className='login-wrapper container'>
       <LoginForm />
       <RegisterForm />
     </div>

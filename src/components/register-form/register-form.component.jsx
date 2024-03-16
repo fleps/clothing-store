@@ -43,7 +43,7 @@ const RegisterForm = () => {
 
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
-        // TODO: handle this with better UI
+        // TODO: handle this with better UI at the end
         alert('Cannot create user, email already in use');
       } else {
         console.log(`User creation error: ${error.message}`)

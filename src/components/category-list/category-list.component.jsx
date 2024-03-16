@@ -3,7 +3,7 @@ import './categories.styles.scss';
 
 const CategoryList = ({ categories }) => {
   return (
-    <div className='categories-container'>
+    <div className='categories-container container'>
       { categories.map(category => {
         return <CategoryItem key={category.id} category={category} />
       })}

@@ -6,7 +6,7 @@ import './navigation.styles.scss';
 const Navigation = () => {
   return (
     <>
-      <div className='navigation'>
+      <div className='navigation container'>
         <Link className='logo-container' to={'/'}>
           <img src={Logo} alt='' className=''/>
         </Link>
