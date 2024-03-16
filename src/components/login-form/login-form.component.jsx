@@ -26,15 +26,12 @@ const LoginForm = () => {
     await createUserDocFromAuth(user);
   };
 
-  // Handle the submit, async as it uses external auth
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      //Login methods
       const response = await loginUserWithEmailPwd(email, password);
 
-      // If successful, continue.
       console.log(response);
 
       clearForm();
@@ -44,7 +41,6 @@ const LoginForm = () => {
     }
   };
 
-  // Basic function called by the inputs onChange event
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
@@ -71,7 +67,12 @@ const LoginForm = () => {
         />
         <div className='buttons-wrapper'>
           <Button type='submit' style='' label='Login' />
-          <Button onClick={loginWithGoogle} type='button' style='google-sign-in' label='Login with Google' />
+          <Button
+            onClick={loginWithGoogle}
+            type='button'
+            style='google-sign-in'
+            label='Login with Google'
+          />
         </div>
       </form>
     </div>
