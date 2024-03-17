@@ -1,4 +1,4 @@
-# Capstone | A React E-commerce custom project
+# WIP - Clothing Store | A React E-commerce custom project
 
 This project was done as part of the course **"Complete React Developer"** from _"Zero To Master"_.
 
