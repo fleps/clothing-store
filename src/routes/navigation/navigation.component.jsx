@@ -1,14 +1,16 @@
 import { useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import { UserContext } from '../../contexts/user.context';
+import { MinicartContext } from '../../contexts/minicart.context.jsx';
 import CartIcon from './../../components/cart/cart-icon.component.jsx';
 import Minicart from '../../components/cart/minicart.component.jsx';
-import { UserContext } from '../../contexts/user.context';
 import { logOutUser } from '../../utils/firebase/firebase.utils';
 import Logo from "../../assets/crown.svg";
 import './navigation.styles.scss';
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
+  const { showMinicart } = useContext(MinicartContext);
 
   return (
     <>
@@ -27,7 +29,7 @@ const Navigation = () => {
           }
           <CartIcon />
         </div>
-        <Minicart />
+        {showMinicart && <Minicart />}
       </div>
       <Outlet />
     </>

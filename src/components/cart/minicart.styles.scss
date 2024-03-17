@@ -7,9 +7,19 @@
   padding: 20px;
   border: 1px solid black;
   background-color: white;
-  top: 90px;
-  right: 40px;
+  top: 70px;
+  right: 18px;
   z-index: 5;
+  box-shadow: 5px 5px 10px #00000070;
+
+  &.to-show {
+    animation: inAnimation 150ms ease-in
+  }
+
+  &.to-hide {
+    animation: outAnimation 100ms ease-out;
+    animation-fill-mode: forwards
+  }
 
   .empty-message {
     font-size: 18px;
@@ -27,3 +37,25 @@
     margin-top: auto;
   }
 }
+
+@keyframes inAnimation {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes outAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+

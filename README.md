@@ -13,9 +13,11 @@ The course is not updated to use latest technologies, so I challenged myself to 
 - Sass v1.72
 - Firebase v10.9
 
-## Features / Functionalities
-- Responsive layout
-- Totally custom style (different from course provided ones)
+## Features (as part of the course)
 - Login / Registration using Firebase auth with Google and Email/Password options
+- Using useContext for Authentication, Products list and Minicart show/hide/render.
+
+## Extra features added by me
+- Minicart mount/dismount with CSS animation using *onAnimationEnd*
 
 
