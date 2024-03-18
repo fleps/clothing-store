@@ -1,7 +1,8 @@
 .minicart-container {
   position: absolute;
   width: 240px;
-  height: 340px;
+  height: auto;
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -27,7 +28,7 @@
   }
 
   .minicart-items {
-    height: 240px;
+    height: auto;
     display: flex;
     flex-direction: column;
     overflow: auto;
