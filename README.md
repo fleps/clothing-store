@@ -16,8 +16,12 @@ The course is not updated to use latest technologies, so I challenged myself to 
 ## Features (as part of the course)
 - Login / Registration using Firebase auth with Google and Email/Password options
 - Using useContext for Authentication, Products list and Minicart show/hide/render.
+- Shop page with functional Add To Cart button + Minicart + Bag icon counter
+- Checkout page with quantity changes + product removal
 
 ## Extra features added by me
+- Minicart opens when adding an item from Shop page.
+- Minicart closes/dismount when changing "pages" using React *useLocation*
 - Minicart mount/dismount with CSS animation using *onAnimationEnd*
 
 

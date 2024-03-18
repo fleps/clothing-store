@@ -61,3 +61,34 @@ h1 {
   font-weight: 700;
   font-style: normal;
 }
+
+/* Custom Scrollbar. Chrome / Safari and Edge full support. */
+.has-custom-scrollbar {
+  scroll-behavior: smooth;
+  margin-right: -6px;
+
+  // Firefox fallback
+  @supports (scrollbar-color: auto) {
+    scrollbar-color: #b6b6b6 transparent; // stylelint-disable-line
+    scrollbar-width: auto; // stylelint-disable-line
+  }
+
+  @supports selector(::-webkit-scrollbar) {
+    scrollbar-color: unset;
+    scrollbar-width: unset;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border: 2px solid transparent;
+      border-radius: 10px;
+      background: #b6b6b6;
+
+      &:hover {
+        background: #888888;
+      }
+    }
+  }
+}
