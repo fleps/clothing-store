@@ -29,6 +29,23 @@ const handleItemAdd = (cartItems, productToAdd) => {
   return [...cartItems, {...productToAdd, quantity: 1}]; */
 };
 
+const handleRemoveOrDecreaseItem = (cartItems, productToModify, directRemove = false) => {
+  const prodIdx = cartItems.findIndex(item => item.id === productToModify.id);
+
+  if (prodIdx > -1) {
+    const newCartItems = [...cartItems];
+    const product = newCartItems[prodIdx];
+
+    if (product.quantity > 1 && !directRemove) {
+      product.quantity -= 1;
+    } else {
+      newCartItems.splice(prodIdx, 1);
+    }
+
+    return newCartItems;
+  }
+}
+
 export const MinicartContext = createContext({
   isMinicartOpen: false,
   setIsMinicartOpen: () => { },
@@ -36,6 +53,7 @@ export const MinicartContext = createContext({
   setShowMinicart: () => { },
   cartItems: [],
   addItemToCart: () => { },
+  removeOrDecreaseItem: () => {},
   bagCount: 0
 });
 
@@ -50,25 +68,31 @@ export const MinicartProvider = ({ children }) => {
     setCartItems(handleItemAdd(cartItems, productToAdd));
   }
 
+  const removeOrDecreaseItem = (...params) => {
+    setCartItems(handleRemoveOrDecreaseItem(cartItems, ...params));
+  }
+
   useEffect(() => {
     const newBagCount = cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0);
     setBagCount(newBagCount);
   }, [cartItems]);
 
   useEffect(() => {
-    if (bagCount > 0) {
+    if (bagCount > 0 && location.pathname !== '/checkout') {
       setIsMinicartOpen(true);
       setShowMinicart(true);
     }
   }, [bagCount]);
 
   useEffect(() => {
-    setIsMinicartOpen(false);
-    setShowMinicart(false);
+    if (showMinicart) {
+      setIsMinicartOpen(false);
+      setShowMinicart(false);
+    }
   }, [location]);
 
 
-  const value = { isMinicartOpen, setIsMinicartOpen, showMinicart, setShowMinicart, addItemToCart, cartItems, bagCount }
+  const value = { isMinicartOpen, setIsMinicartOpen, showMinicart, setShowMinicart, addItemToCart, cartItems, bagCount, removeOrDecreaseItem }
 
   return (
     <MinicartContext.Provider value={value}>{children}</MinicartContext.Provider>

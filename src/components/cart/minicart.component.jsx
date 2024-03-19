@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { MinicartContext } from '../../contexts/minicart.context';
 import CartItem from './cart-item.component.jsx';
-import Button from '../button/button.component';
 import './minicart.styles.scss';
 
 const Minicart = () => {
