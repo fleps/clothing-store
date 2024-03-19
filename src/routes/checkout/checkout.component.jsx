@@ -4,7 +4,7 @@ import './checkout.styles.scss';
 import { Link } from 'react-router-dom';
 
 const CheckoutComponent = () => {
-  const { cartItems, addItemToCart, removeOrDecreaseItem } = useContext(MinicartContext);
+  const { cartItems, addItemToCart, removeOrDecreaseItem, bagTotalPrice } = useContext(MinicartContext);
 
   return (
     <div className='container checkout-container'>
@@ -59,7 +59,7 @@ const CheckoutComponent = () => {
               })
             }
             <div className='total'>
-              Total: $ 00.00
+              Total: $ {bagTotalPrice.toFixed(2)}
             </div>
           </>
         )

@@ -5,7 +5,7 @@ import CartItem from './cart-item.component.jsx';
 import './minicart.styles.scss';
 
 const Minicart = () => {
-  const { isMinicartOpen, setShowMinicart, cartItems } = useContext(MinicartContext);
+  const { isMinicartOpen, setShowMinicart, cartItems, bagTotalPrice } = useContext(MinicartContext);
 
   return (
     <div className={`minicart-container ${isMinicartOpen ? 'to-show' : 'to-hide'}`}
@@ -20,7 +20,10 @@ const Minicart = () => {
           <>
             <div className='minicart-items has-custom-scrollbar'>
               {cartItems.map(item => <CartItem key={item.id} cartItem={item} /> )}
-            </div>
+              </div>
+              <div className='minicart-total medium-barlow-cond'>
+                Total: <span>$ {bagTotalPrice.toFixed(2)}</span>
+              </div>
             <Link className='button-container' to={'/checkout'}>Checkout</Link>
           </>
         )

@@ -61,7 +61,6 @@ export const MinicartProvider = ({ children }) => {
   const [isMinicartOpen, setIsMinicartOpen] = useState(false);
   const [showMinicart, setShowMinicart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
-  const [bagCount, setBagCount] = useState(0);
   const location = useLocation();
 
   const addItemToCart = (productToAdd) => {
@@ -72,10 +71,7 @@ export const MinicartProvider = ({ children }) => {
     setCartItems(handleRemoveOrDecreaseItem(cartItems, ...params));
   }
 
-  useEffect(() => {
-    const newBagCount = cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0);
-    setBagCount(newBagCount);
-  }, [cartItems]);
+  const bagCount = cartItems.reduce((totalQty, cartItem) => totalQty + cartItem.quantity, 0);
 
   useEffect(() => {
     if (bagCount > 0 && location.pathname !== '/checkout') {
@@ -85,14 +81,24 @@ export const MinicartProvider = ({ children }) => {
   }, [bagCount]);
 
   useEffect(() => {
-    if (showMinicart) {
-      setIsMinicartOpen(false);
-      setShowMinicart(false);
-    }
+    setIsMinicartOpen(false);
+    setShowMinicart(false);
   }, [location]);
 
+  const bagTotalPrice = cartItems.reduce((totalPrice, cartItem) => totalPrice + cartItem.price * cartItem.quantity, 0);
 
-  const value = { isMinicartOpen, setIsMinicartOpen, showMinicart, setShowMinicart, addItemToCart, cartItems, bagCount, removeOrDecreaseItem }
+  const value =
+    {
+      isMinicartOpen,
+      setIsMinicartOpen,
+      showMinicart,
+      setShowMinicart,
+      addItemToCart,
+      cartItems,
+      bagCount,
+      removeOrDecreaseItem,
+      bagTotalPrice,
+    };
 
   return (
     <MinicartContext.Provider value={value}>{children}</MinicartContext.Provider>
