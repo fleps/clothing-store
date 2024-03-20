@@ -5,10 +5,10 @@ import bagIcon from '../../assets/shopping-bag.svg'
 import './cart-icon.styles.scss';
 
 const CartIcon = () => {
-  const { isMinicartOpen, setIsMinicartOpen, showMinicart, setShowMinicart, bagCount } = useContext(MinicartContext);
+  const { openMinicart, setOpenMinicart, bagCount } = useContext(MinicartContext);
+
   const toggleMinicart = () => {
-    setIsMinicartOpen(!isMinicartOpen);
-    if (!showMinicart) setShowMinicart(true);
+    setOpenMinicart(!openMinicart);
   }
 
   return (

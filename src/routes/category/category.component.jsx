@@ -18,7 +18,7 @@ const Category = () => {
       <h2 className='cat-page-name'>
         {category}
         <span className='product-count'>
-          {products.length} products
+          {products && ` ${products.length} products`}
         </span>
       </h2>
       <div className='shop-container'>

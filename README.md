@@ -16,12 +16,21 @@ The course is not updated to use latest technologies, so I challenged myself to 
 ## Features (as part of the course)
 - Login / Registration using Firebase auth with Google and Email/Password options
 - Using useContext for Authentication, Products list and Minicart show/hide/render.
-- Shop page with functional Add To Cart button + Minicart + Bag icon counter
-- Checkout page with quantity changes + product removal
+- Shop / Category pages with functional Add To Cart button + Minicart + Bag icon counter
+- Cart/Minicart quantity changes + product removal + counter update
+- Categories data comes from Firebase.
 
-## Extra features added by me
-- Minicart opens when adding an item from Shop page.
-- Minicart closes/dismount when changing "pages" using React *useLocation*
-- Minicart mount/dismount with CSS animation using *onAnimationEnd*
+## Extra features added by me (nor part of the course)
+- Products have currency and proper price format.
+- Minicart open / close improvements:
+  - Minicart opens when adding a product to the bag (if the user is not on Cart page).
+  - Minicart closes when changing "pages".
+  - Minicart has CSS animation to open/close, doesn't just appear/disappear.
+  - Logic improved: reworked calls to avoid unnecessary re-renders when opening / closing.
 
+- Unnecessary components grouped into one (the coure is totally overboard)
+- Unnecessary useState + useEffects removed following React docs.
+- Added cleanup function on useEffect tha fetches the category data from Firebase (course never mentions this)
+- Semantic / accessible HTML (course code has divs nested into spans, divs/spans having click events...)
+- Optimized arrays methods, course teaches bad practices doing 2 (or even more) transverse on the same arrays for no reason.
 

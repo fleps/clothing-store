@@ -8,8 +8,8 @@
   padding: 20px;
   border: 1px solid black;
   background-color: white;
-  top: 70px;
-  right: 18px;
+  top: 60px;
+  right: 22px;
   z-index: 5;
   box-shadow: 5px 5px 10px #00000070;
 
@@ -20,6 +20,10 @@
   &.to-hide {
     animation: outAnimation 100ms ease-out;
     animation-fill-mode: forwards
+  }
+
+  .minicart-content {
+    position: relative;
   }
 
   .empty-message {
@@ -43,8 +47,17 @@
     width: 100%;
   }
 
-  button {
-    margin-top: auto;
+  .close-minicart {
+    all: unset;
+    position: absolute;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    top: -18px;
+    right: -14px;
+    cursor: pointer;
+    user-select: none;
+    justify-content: center;
   }
 }
 

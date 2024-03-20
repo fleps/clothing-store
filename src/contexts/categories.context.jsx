@@ -9,11 +9,19 @@ export const CategoriesProvider = ({ children }) => {
   const [categoriesMap, setCategoriesMap] = useState({});
 
   useEffect(() => {
+    let isApiSubscribed = true;
+
     const getCategoriesMap = async () => {
-      const categoriesMap = await getCategories();
-      setCategoriesMap(categoriesMap);
+      if (isApiSubscribed) {
+        const categoriesMap = await getCategories();
+        setCategoriesMap(categoriesMap);
+      }
     }
     getCategoriesMap();
+
+    return () => {
+      isApiSubscribed = false;
+    }
   }, []);
 
   const value = { categoriesMap };

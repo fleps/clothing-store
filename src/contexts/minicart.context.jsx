@@ -1,5 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { createContext, useState } from 'react';
 
 const handleItemAdd = (cartItems, productToAdd) => {
   // Better approach, the one suggested by the course (commented below) transverse the same array twice for some reason, bad practice.
@@ -47,57 +46,43 @@ const handleRemoveOrDecreaseItem = (cartItems, productToModify, directRemove = f
 }
 
 export const MinicartContext = createContext({
-  isMinicartOpen: false,
-  setIsMinicartOpen: () => { },
-  showMinicart: false,
-  setShowMinicart: () => { },
+  openMinicart: false,
+  setOpenMinicart: () => { },
   cartItems: [],
   addItemToCart: () => { },
   removeOrDecreaseItem: () => {},
-  bagCount: 0
+  bagCount: 0,
+  bagTotalPrice: 0
 });
 
 export const MinicartProvider = ({ children }) => {
-  const [isMinicartOpen, setIsMinicartOpen] = useState(false);
-  const [showMinicart, setShowMinicart] = useState(false);
+  const [openMinicart, setOpenMinicart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
-  const location = useLocation();
+  const bagCount = cartItems.length
+    ? cartItems.reduce((totalQty, cartItem) => totalQty + cartItem.quantity, 0)
+    : 0;
+  const bagTotalPrice = cartItems.length
+    ? cartItems.reduce((totalPrice, cartItem) => totalPrice + cartItem.price * cartItem.quantity, 0)
+    : 0;
 
   const addItemToCart = (productToAdd) => {
     setCartItems(handleItemAdd(cartItems, productToAdd));
+    setOpenMinicart(true);
   }
 
-  const removeOrDecreaseItem = (...params) => {
+   const removeOrDecreaseItem = (...params) => {
     setCartItems(handleRemoveOrDecreaseItem(cartItems, ...params));
   }
 
-  const bagCount = cartItems.reduce((totalQty, cartItem) => totalQty + cartItem.quantity, 0);
-
-  useEffect(() => {
-    if (bagCount > 0 && location.pathname !== '/checkout') {
-      setIsMinicartOpen(true);
-      setShowMinicart(true);
-    }
-  }, [bagCount]);
-
-  useEffect(() => {
-    setIsMinicartOpen(false);
-    setShowMinicart(false);
-  }, [location]);
-
-  const bagTotalPrice = cartItems.reduce((totalPrice, cartItem) => totalPrice + cartItem.price * cartItem.quantity, 0);
-
   const value =
     {
-      isMinicartOpen,
-      setIsMinicartOpen,
-      showMinicart,
-      setShowMinicart,
-      addItemToCart,
+      openMinicart,
+      setOpenMinicart,
       cartItems,
-      bagCount,
+      addItemToCart,
       removeOrDecreaseItem,
-      bagTotalPrice,
+      bagCount,
+      bagTotalPrice
     };
 
   return (
