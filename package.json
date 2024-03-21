@@ -1,5 +1,6 @@
 {
   "name": "6-clothing-store",
+  "homepage": "/clothing-store/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

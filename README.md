@@ -1,6 +1,6 @@
-# WIP - Clothing Store | A React E-commerce custom project
+# Clothing Store v1 | A React E-commerce custom project
 
-This project was done as part of the course **"Complete React Developer"** from _"Zero To Master"_.
+This project was done as part of the course **"Complete React Developer"** from _"Zero To Master"_. (PS: I do NOT recommend this course, unless you just want an idea to build a somewhat bigger react site)
 
 The course is not updated to use latest technologies, so I challenged myself to replicate what the course explained using more up to date approaches.
 
@@ -20,10 +20,10 @@ The course is not updated to use latest technologies, so I challenged myself to 
 - Cart/Minicart quantity changes + product removal + counter update
 - Categories data comes from Firebase.
 
-## Extra features added by me (nor part of the course)
+## Extra features added by me (not part of the course)
 - Products have currency and proper price format.
 - Minicart open / close improvements:
-  - Minicart opens when adding a product to the bag (if the user is not on Cart page).
+  - Minicart auto opens when adding a product to the bag (if the user is not on Cart page). Very basic for e-commerce.
   - Minicart closes when changing "pages".
   - Minicart has CSS animation to open/close, doesn't just appear/disappear.
   - Logic improved: reworked calls to avoid unnecessary re-renders when opening / closing.
@@ -34,3 +34,7 @@ The course is not updated to use latest technologies, so I challenged myself to 
 - Semantic / accessible HTML (course code has divs nested into spans, divs/spans having click events...)
 - Optimized arrays methods, course teaches bad practices doing 2 (or even more) transverse on the same arrays for no reason.
 
+## What's Next
+As I said, I don't recommend this course, as I expected way more from it regarding building what they called a "e-commerce" site.
+
+My idea is to keep working on this to build a "v2" that resembles more an e-commerce site, with better UI, more features and refactoring some things the course teached on a way that doesn't seems the best approach according to my readings.
