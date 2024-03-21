@@ -42,6 +42,7 @@ The course is not updated to use latest technologies, so I challenged myself to 
 - Semantic / accessible HTML (course code has divs nested into spans, divs/spans having click events...)
 - Optimized arrays methods, course teaches bad practices doing 2 (or even more) transverse on the same arrays for no reason.
 - Github Actions Workflow implemented to auto-publish when a new version gets pushed to /releases branch
+- Navigation fix position with glass effect.
 
 ## What's Next
 As I said, I don't recommend this course, as I expected way more from it regarding building what they called a "e-commerce" site.

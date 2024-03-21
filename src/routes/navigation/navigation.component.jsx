@@ -12,22 +12,24 @@ const Navigation = () => {
 
   return (
     <>
-      <div className='navigation container'>
-        <Link className='logo-container' to={'/'}>
-          <img src={Logo} alt='' className=''/>
-        </Link>
-        <div className='nav-links-container'>
-          <Link className='nav-link' to={'/shop'}>Shop</Link>
-          {
-            !currentUser ? (
-              <Link className='nav-link' to={'/login'}>Login</Link>
-            ) : (
-              <span onClick={logOutUser} className='nav-link'>Logout</span>
-            )
-          }
-          <CartIcon />
+      <div className='navigation'>
+        <div className='navigation-content'>
+          <Link className='logo-container' to={'/'}>
+            <img src={Logo} alt='' className=''/>
+          </Link>
+          <div className='nav-links-container'>
+            <Link className='nav-link' to={'/shop'}>Shop</Link>
+            {
+              !currentUser ? (
+                <Link className='nav-link' to={'/login'}>Login</Link>
+              ) : (
+                <span onClick={logOutUser} className='nav-link'>Logout</span>
+              )
+            }
+            <CartIcon />
+          </div>
+          <Minicart />
         </div>
-        <Minicart />
       </div>
       <Outlet />
     </>
