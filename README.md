@@ -4,11 +4,13 @@ This project is part of the course **"Complete React Developer"** from _"Zero To
 
 **ON GOING**
 
-The course is on going, this is just a milestone on the course timeline. There are many things to do on the timeline, and I also want to implement many improvements (the course base code is not even responsive...)
+The course is on going, this is just a milestone on the course timeline. There are many things left, and I also want to implement many improvements (the course base code is not even responsive...)
 
 The course is not updated to use latest technologies, so I challenged myself to replicate what the course explained using more up to date approaches.
 
-» Open the current version here: https://fleps.github.io/clothing-store
+» Open the *current version here: https://fleps.github.io/clothing-store
+
+*Published version is alwasy based on the code from this branch: https://github.com/fleps/clothing-store/tree/releases
 
 ## Project Technical Details
 
@@ -39,6 +41,7 @@ The course is not updated to use latest technologies, so I challenged myself to 
 - Added cleanup function on useEffect tha fetches the category data from Firebase (course never mentions this)
 - Semantic / accessible HTML (course code has divs nested into spans, divs/spans having click events...)
 - Optimized arrays methods, course teaches bad practices doing 2 (or even more) transverse on the same arrays for no reason.
+- Github Actions Workflow implemented to auto-publish when a new version gets pushed to /releases branch
 
 ## What's Next
 As I said, I don't recommend this course, as I expected way more from it regarding building what they called a "e-commerce" site.
