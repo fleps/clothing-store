@@ -41,4 +41,4 @@ The course is not updated to use latest technologies, so I challenged myself to 
 ## What's Next
 As I said, I don't recommend this course, as I expected way more from it regarding building what they called a "e-commerce" site.
 
-My idea is to keep working on this to build a "v2" that resembles more an e-commerce site, with better UI, more features and refactoring some things the course teached on a way that doesn't seems the best approach according to my readings.
+My idea is to keep working on this to build a "v2" that resembles more an e-commerce site, with better (AND RESPONSIVE)  UI, more features and refactoring some things the course teached on a way that doesn't seems the best approach according to my readings.
