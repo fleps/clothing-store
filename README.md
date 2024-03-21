@@ -8,6 +8,8 @@ The course is on going, this is just a milestone on the course timeline. There a
 
 The course is not updated to use latest technologies, so I challenged myself to replicate what the course explained using more up to date approaches.
 
+» Open the current version here: https://fleps.github.io/clothing-store
+
 ## Project Technical Details
 
 - Node v18.16
