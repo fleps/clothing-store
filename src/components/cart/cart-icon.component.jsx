@@ -5,14 +5,14 @@ import bagIcon from '../../assets/shopping-bag.svg'
 import './cart-icon.styles.scss';
 
 const CartIcon = () => {
-  const { openMinicart, setOpenMinicart, bagCount } = useContext(MinicartContext);
+  const { openMinicart, toggleMinicart, bagCount } = useContext(MinicartContext);
 
-  const toggleMinicart = () => {
-    setOpenMinicart(!openMinicart);
+  const handleMinicartToggle = () => {
+    toggleMinicart(!openMinicart);
   }
 
   return (
-    <button type='button' className='cart-icon-container' onClick={toggleMinicart}>
+    <button type='button' className='cart-icon-container' onClick={handleMinicartToggle}>
       <img className='shopping-icon' src={bagIcon} alt='' />
       <span className='item-count'>{bagCount}</span>
     </button>

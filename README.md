@@ -24,6 +24,7 @@ The course is not updated to use latest technologies, so I challenged myself to 
 ## Features (as part of the course)
 - Login / Registration using Firebase auth with Google and Email/Password options
 - Using useContext for Authentication, Products list and Minicart show/hide/render.
+  - Context changes later on the course: converted useStates inside the Context to useReducer
 - Shop / Category pages with functional Add To Cart button + Minicart + Bag icon counter
 - Cart/Minicart quantity changes + product removal + counter update
 - Categories data comes from Firebase.

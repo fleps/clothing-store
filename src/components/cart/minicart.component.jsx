@@ -5,19 +5,27 @@ import CartItem from './cart-item.component.jsx';
 import './minicart.styles.scss';
 
 const Minicart = () => {
-  const { openMinicart, setOpenMinicart, cartItems, bagTotalPrice } = useContext(MinicartContext);
+  const { openMinicart, toggleMinicart, cartItems, bagTotalPrice } = useContext(MinicartContext);
   const location = useLocation();
 
   useEffect(() => {
     if (openMinicart) {
-      setOpenMinicart(false);
+      toggleMinicart(false);
     }
   }, [location]); //eslint-disable-line react-hooks/exhaustive-deps
 
+  const closeMinicart = () => {
+    toggleMinicart(false)
+  }
+
   return (
-    <div className={`minicart-container ${openMinicart && location.pathname !== '/checkout' ? 'to-show' : 'to-hide'}`}>
+    <div
+      className={
+        `minicart-container
+        ${(openMinicart && location.pathname !== '/checkout')
+          ? 'to-show' : 'to-hide'}`}>
       <div className='minicart-content'>
-        <button type='button' className='close-minicart' onClick={() => setOpenMinicart(false)}>&#10005;</button>
+        <button type='button' className='close-minicart' onClick={closeMinicart}>&#10005;</button>
         {
           !cartItems.length ? (
             <h2 className='empty-message'>

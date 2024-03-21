@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useReducer } from 'react';
 
 const handleItemAdd = (cartItems, productToAdd) => {
   // Better approach, the one suggested by the course (commented below) transverse the same array twice for some reason, bad practice.
@@ -47,7 +47,7 @@ const handleRemoveOrDecreaseItem = (cartItems, productToModify, directRemove = f
 
 export const MinicartContext = createContext({
   openMinicart: false,
-  setOpenMinicart: () => { },
+  toggleMinicart: () => { },
   cartItems: [],
   addItemToCart: () => { },
   removeOrDecreaseItem: () => {},
@@ -55,29 +55,83 @@ export const MinicartContext = createContext({
   bagTotalPrice: 0
 });
 
-export const MinicartProvider = ({ children }) => {
-  const [openMinicart, setOpenMinicart] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
-  const bagCount = cartItems.length
-    ? cartItems.reduce((totalQty, cartItem) => totalQty + cartItem.quantity, 0)
-    : 0;
-  const bagTotalPrice = cartItems.length
-    ? cartItems.reduce((totalPrice, cartItem) => totalPrice + cartItem.price * cartItem.quantity, 0)
-    : 0;
+const INITIAL_STATE = {
+  openMinicart: false,
+  cartItems: [],
+  bagCount: 0,
+  bagTotalPrice: 0
+}
 
-  const addItemToCart = (productToAdd) => {
-    setCartItems(handleItemAdd(cartItems, productToAdd));
-    setOpenMinicart(true);
+const MINICART_ACTION_TYPES = {
+  SET_CAR_ITEMS: 'SET_CAR_ITEMS',
+  TOGGLE_MINICART: 'TOGGLE_MINICART'
+}
+
+const minicartReducer = (state, action) => {
+  const { type, payload } = action;
+
+  switch (type) {
+    case MINICART_ACTION_TYPES.SET_CAR_ITEMS:
+      return {
+        ...state,
+        ...payload
+      }
+    case MINICART_ACTION_TYPES.TOGGLE_MINICART:
+      return {
+        ...state,
+        openMinicart: payload
+      }
+    default:
+      throw new Error(`Unhandled type ${type} in userReducer`);
+  }
+}
+
+export const MinicartProvider = ({ children }) => {
+  const [{ openMinicart, cartItems, bagCount, bagTotalPrice }, dispatch] = useReducer(minicartReducer, INITIAL_STATE);
+
+  const updateMinicartReducer = (newCartItems) => {
+    const newBagCount = newCartItems.length
+      ? newCartItems.reduce((totalQty, cartItem) => totalQty + cartItem.quantity, 0)
+      : 0;
+    const newBagTotalPrice = newCartItems.length
+      ? newCartItems.reduce((totalPrice, cartItem) => totalPrice + cartItem.price * cartItem.quantity, 0)
+      : 0;
+
+    dispatch({
+      type: MINICART_ACTION_TYPES.SET_CAR_ITEMS,
+      payload: {
+        cartItems: newCartItems,
+        bagCount: newBagCount,
+        bagTotalPrice: newBagTotalPrice
+      }
+    });
+  };
+
+  const toggleMinicart = (value) => {
+    dispatch({
+      type: MINICART_ACTION_TYPES.TOGGLE_MINICART,
+      payload: value
+    });
   }
 
-   const removeOrDecreaseItem = (...params) => {
-    setCartItems(handleRemoveOrDecreaseItem(cartItems, ...params));
+  const addItemToCart = (productToAdd) => {
+    const newCartItems = handleItemAdd(cartItems, productToAdd);
+    updateMinicartReducer(newCartItems);
+    toggleMinicart(true);
+  }
+
+  const removeOrDecreaseItem = (...params) => {
+    const newCartItems = handleRemoveOrDecreaseItem(cartItems, ...params);
+    updateMinicartReducer(newCartItems);
+    if (!newCartItems.length && openMinicart) {
+      toggleMinicart(false);
+    }
   }
 
   const value =
     {
       openMinicart,
-      setOpenMinicart,
+      toggleMinicart,
       cartItems,
       addItemToCart,
       removeOrDecreaseItem,

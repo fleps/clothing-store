@@ -2,9 +2,6 @@
   position: absolute;
   width: 280px;
   height: auto;
-  max-height: 80vh;
-  display: flex;
-  flex-direction: column;
   padding: 20px;
   border: 1px solid black;
   background-color: white;
@@ -24,6 +21,10 @@
 
   .minicart-content {
     position: relative;
+    display: flex;
+    max-height: 80vh;
+    flex-direction: column;
+    max-height: calc(100vh - 120px);
   }
 
   .empty-message {
