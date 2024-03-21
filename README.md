@@ -1,6 +1,10 @@
-# Clothing Store v1 | A React E-commerce custom project
+# (WIP) Clothing Store v1 | A React E-commerce custom project
 
-This project was done as part of the course **"Complete React Developer"** from _"Zero To Master"_. (PS: I do NOT recommend this course, unless you just want an idea to build a somewhat bigger react site)
+This project is part of the course **"Complete React Developer"** from _"Zero To Master"_. (PS: I do NOT recommend this course, unless you just want an idea to build a somewhat bigger react site)
+
+**ON GOING**
+
+The course is on going, this is just a milestone on the course timeline. There are many things to do on the timeline, and I also want to implement many improvements (the course base code is not even responsive...)
 
 The course is not updated to use latest technologies, so I challenged myself to replicate what the course explained using more up to date approaches.
 
