@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from "react-router-dom";
-import { UserProvider } from './contexts/user.context.jsx';
-import { CategoriesProvider } from './contexts/categories.context.jsx';
+import { Provider } from 'react-redux';
+
+import { store } from './store/store.js';
 import { MinicartProvider } from './contexts/minicart.context.jsx';
 
 import App from './App.jsx'
@@ -12,14 +13,12 @@ import './index.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename='/clothing-store'>
-      <UserProvider>
-        <CategoriesProvider>
-          <MinicartProvider>
-            <App />
-          </MinicartProvider>
-        </CategoriesProvider>
-      </UserProvider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter basename='/clothing-store'>
+        <MinicartProvider>
+          <App />
+        </MinicartProvider>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
 )

@@ -1,10 +1,11 @@
-import { useContext } from 'react';
-import { CategoriesContext } from '../../contexts/categories.context';
-import ProductCard from '../../components/product-card/product-card.component';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+import { selectCategoriesMap } from '../../store/category.selector';
+import ProductCard from '../../components/product-card/product-card.component';
 
 const CategoryListPage = () => {
-  const { categoriesMap } = useContext(CategoriesContext)
+  const categoriesMap = useSelector(selectCategoriesMap);
 
   return (
     <div className='container page-container'>

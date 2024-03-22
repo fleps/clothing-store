@@ -23,8 +23,9 @@ The course is not updated to use latest technologies, so I challenged myself to 
 
 ## Features (as part of the course)
 - Login / Registration using Firebase auth with Google and Email/Password options
-- Using useContext for Authentication, Products list and Minicart show/hide/render.
-  - Context changes later on the course: converted useStates inside the Context to useReducer
+- Initially using `useContext` for Authentication, Products list and Minicart show/hide/render.
+  - Refactor #1: Context changes, converting `useStates` inside the Context to `useReducer`
+  - Refactor #2: Contexts gets replaced by using Redux. `reselect` added to the project to memoize the category array and avoid recreating it without need and unnecessart re-renders.
 - Shop / Category pages with functional Add To Cart button + Minicart + Bag icon counter
 - Cart/Minicart quantity changes + product removal + counter update
 - Categories data comes from Firebase.
@@ -38,8 +39,8 @@ The course is not updated to use latest technologies, so I challenged myself to 
   - Logic improved: reworked calls to avoid unnecessary re-renders when opening / closing.
 
 - Unnecessary components grouped into one (the coure is totally overboard)
-- Unnecessary useState + useEffects removed following React docs.
-- Added cleanup function on useEffect tha fetches the category data from Firebase (course never mentions this)
+- Unnecessary `useState` + `useEffects` removed following React docs.
+- Added cleanup function on `useEffect` tha fetches the category data from Firebase (course never mentions this)
 - Semantic / accessible HTML (course code has divs nested into spans, divs/spans having click events...)
 - Optimized arrays methods, course teaches bad practices doing 2 (or even more) transverse on the same arrays for no reason.
 - Github Actions Workflow implemented to auto-publish when a new version gets pushed to /releases branch

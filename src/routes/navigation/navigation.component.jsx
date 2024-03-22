@@ -1,6 +1,6 @@
-import { useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import { UserContext } from '../../contexts/user.context';
+import { useSelector } from 'react-redux';
+
 import CartIcon from './../../components/cart/cart-icon.component.jsx';
 import Minicart from '../../components/cart/minicart.component.jsx';
 import { logOutUser } from '../../utils/firebase/firebase.utils';
@@ -8,7 +8,7 @@ import Logo from "../../assets/crown.svg";
 import './navigation.styles.scss';
 
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext);
+  const currentUser = useSelector((state) => state.user.currentUser);
 
   return (
     <>
