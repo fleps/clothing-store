@@ -1,4 +1,4 @@
-import { createContext, useState, useReducer } from 'react';
+import { createContext, useReducer } from 'react';
 
 const handleItemAdd = (cartItems, productToAdd) => {
   // Better approach, the one suggested by the course (commented below) transverse the same array twice for some reason, bad practice.

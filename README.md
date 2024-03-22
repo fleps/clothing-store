@@ -1,10 +1,10 @@
 # (WIP) Clothing Store v1 | A React E-commerce custom project
 
-This project is part of the course **"Complete React Developer"** from _"Zero To Master"_. (PS: I do NOT recommend this course, unless you just want an idea to build a somewhat bigger react site)
+Reac basic e-commerce store, build as part of the course **"Complete React Developer"** from _"Zero To Master"_.
 
-**ON GOING**
+**Work In Progress**
 
-The course is on going, this is just a milestone on the course timeline. There are many things left, and I also want to implement many improvements (the course base code is not even responsive...)
+It's a long/extensive course and there are many modules to go, the current version is just a milestone on the course timeline. I also want to implement many improvements (the course base code is not even responsive and has some bad practices)
 
 The course is not updated to use latest technologies, so I challenged myself to replicate what the course explained using more up to date approaches.
 
@@ -15,7 +15,7 @@ The course is not updated to use latest technologies, so I challenged myself to 
 ## Project Technical Details
 
 - Node v18.16
-- Project Boilerplate created using [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) v4.2 (Vite 5.1) (course uses CRA)
+- Project Boilerplate created using [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) v4.2 (Vite 5.1) (the course uses CRA)
 - React + react-dom v18.2
 - React-router v6.22
 - Sass v1.72
@@ -29,7 +29,7 @@ The course is not updated to use latest technologies, so I challenged myself to 
 - Cart/Minicart quantity changes + product removal + counter update
 - Categories data comes from Firebase.
 
-## Extra features added by me (not part of the course)
+## Extra features added by me so far (not part of the course)
 - Products have currency and proper price format.
 - Minicart open / close improvements:
   - Minicart auto opens when adding a product to the bag (if the user is not on Cart page). Very basic for e-commerce.
@@ -46,6 +46,8 @@ The course is not updated to use latest technologies, so I challenged myself to 
 - Navigation fix position with glass effect.
 
 ## What's Next
-As I said, I don't recommend this course, as I expected way more from it regarding building what they called a "e-commerce" site.
+While I'm still doing the course and plan to finish all modules, I'm ont sure I recommend it. I can't judge the React part itself much, and the course still has its values to introduce many different topics needed for someone wanting to learn React, but I expected way more from it.
 
-My idea is to keep working on this to build a "v2" that resembles more an e-commerce site, with better (AND RESPONSIVE)  UI, more features and refactoring some things the course teached on a way that doesn't seems the best approach according to my readings.
+On the pure Front-End side of things (proper UX for e-commerce sites, good practices for HTML/JS/CSS, responsive layout) the course lacks tremendously and actually teaches bad practices.
+
+My idea is to keep working on this to finish all modules and at the end build a "v2" that resembles more an e-commerce site, with better (AND RESPONSIVE)  UI, more features and refactoring some things the course teached on a way that doesn't seems the best approach according to my readings.
