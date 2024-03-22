@@ -10,7 +10,7 @@ The course is not updated to use latest technologies, so I challenged myself to 
 
 » Open the *current version here: https://fleps.github.io/clothing-store
 
-*Published version is alwasy based on the code from this branch: https://github.com/fleps/clothing-store/tree/releases
+*Published version is alwasy based on the code from the [release branch](https://github.com/fleps/clothing-store/tree/releases).
 
 ## Project Technical Details
 
