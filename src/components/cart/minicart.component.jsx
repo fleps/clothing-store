@@ -1,21 +1,28 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
-import { MinicartContext } from '../../contexts/minicart.context';
+
+import { selectOpenMinicart, selectBagTotalPrice, selectCartItems } from '../../store/minicart.selector';
+import { toggleMinicart } from '../../store/minicart.reducer';
+
 import CartItem from './cart-item.component.jsx';
 import './minicart.styles.scss';
 
 const Minicart = () => {
-  const { openMinicart, toggleMinicart, cartItems, bagTotalPrice } = useContext(MinicartContext);
+  const dispatch = useDispatch();
   const location = useLocation();
+  const openMinicart = useSelector(selectOpenMinicart);
+  const bagTotalPrice = useSelector(selectBagTotalPrice);
+  const cartItems = useSelector(selectCartItems);
 
   useEffect(() => {
     if (openMinicart) {
-      toggleMinicart(false);
+      dispatch(toggleMinicart(false));
     }
   }, [location]); //eslint-disable-line react-hooks/exhaustive-deps
 
   const closeMinicart = () => {
-    toggleMinicart(false)
+    dispatch(toggleMinicart(false))
   }
 
   return (

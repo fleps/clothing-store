@@ -1,13 +1,19 @@
-import { useContext } from 'react';
-import { MinicartContext } from '../../contexts/minicart.context';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItemToCart, toggleMinicart } from '../../store/minicart.reducer';
+import { selectCartItems } from '../../store/minicart.selector';
+
 import Button from '../button/button.component';
 import './product-card.styles.scss';
 
 const ProductCard = ({ product }) => {
   const { name, imageUrl, price } = product;
-  const { addItemToCart } = useContext(MinicartContext);
+  const cartItems = useSelector(selectCartItems);
+  const dispatch = useDispatch();
 
-  const addProductToCart = () => addItemToCart(product);
+  const addProductToCart = () => {
+    dispatch(addItemToCart(cartItems, product));
+    dispatch(toggleMinicart(true));
+  };
 
   return (
     <div className='product-card-container'>

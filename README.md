@@ -1,6 +1,6 @@
 # (WIP) Clothing Store v1 | A React E-commerce custom project
 
-Reac basic e-commerce store, build as part of the course **"Complete React Developer"** from _"Zero To Master"_.
+Reac basic e-commerce store, build as part of the course **"Complete React Developer"** from _"Zero To Master"_. (PS: read the *About the Course* section down below)
 
 **Work In Progress**
 
@@ -46,9 +46,12 @@ The course is not updated to use latest technologies, so I challenged myself to 
 - Github Actions Workflow implemented to auto-publish when a new version gets pushed to /releases branch
 - Navigation fix position with glass effect.
 
+## About the Course
+While I'm still doing the course and plan to finish all modules, I'm not sure I recommend it. I can't judge the React part itself too much, and the course still has its values to introduce many different topics needed for someone wanting to learn React, but I expected way more from it.
+
+On the pure Front-End side of things (proper UX for e-commerce sites, good practices for HTML/JS/CSS, responsive layout) the course **lacks tremendously** and **actually teaches bad practices** (double transversing arrays, nesting divs inside spans, attaching onClick events do spans/divs...).
+
+Also, the teaching method can be really infuriating as it's based on rafacoring over and over. Basically you will build some functionality to learn something (like useEffect), but even as new to React and had the impression that something was off, the approach had flaws and sub-optimal code. Then, at a later lesson, it REFACTORS the entire functionality to remove that code (prob that's why it had flaws, he knew it was going to be removed), to teach another approach. And AGAIN, there are flaws on the new approach, as later on the course you will need to refactor AGAIN. So far this happened with Auth, Category and Minicart functionalities, having refactored them 3 times already and each one had some caveats and weird flaws that many stundents point out in the video comments. And at the end, do you really LEARN something if you are always see
+
 ## What's Next
-While I'm still doing the course and plan to finish all modules, I'm ont sure I recommend it. I can't judge the React part itself much, and the course still has its values to introduce many different topics needed for someone wanting to learn React, but I expected way more from it.
-
-On the pure Front-End side of things (proper UX for e-commerce sites, good practices for HTML/JS/CSS, responsive layout) the course lacks tremendously and actually teaches bad practices.
-
 My idea is to keep working on this to finish all modules and at the end build a "v2" that resembles more an e-commerce site, with better (AND RESPONSIVE)  UI, more features and refactoring some things the course teached on a way that doesn't seems the best approach according to my readings.

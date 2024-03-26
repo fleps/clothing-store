@@ -1,10 +1,18 @@
-import { useContext } from 'react';
-import { MinicartContext } from '../../contexts/minicart.context';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { addItemToCart, removeOrDecreaseItem } from '../../store/minicart.reducer';
+import { selectBagTotalPrice, selectCartItems } from '../../store/minicart.selector';
+
 import './checkout.styles.scss';
 import { Link } from 'react-router-dom';
 
 const CheckoutComponent = () => {
-  const { cartItems, addItemToCart, removeOrDecreaseItem, bagTotalPrice } = useContext(MinicartContext);
+  const dispatch = useDispatch();
+  const cartItems = useSelector(selectCartItems);
+  const bagTotalPrice = useSelector(selectBagTotalPrice);
+
+  const handleAddToCart = (product) => dispatch(addItemToCart(cartItems, product));
+  const handleRemoveOrDecrease = (product, toRemove) => dispatch(removeOrDecreaseItem(cartItems, product, toRemove));
 
   return (
     <div className='container checkout-container'>
@@ -37,13 +45,13 @@ const CheckoutComponent = () => {
                     <div className='quantity'>
                       <button
                         type='button'
-                        onClick={() => removeOrDecreaseItem(item)}
+                        onClick={() => handleRemoveOrDecrease(item)}
                       >
                         -
                       </button>
                       <span className='value'>{item.quantity}</span>
                       <button type='button'
-                        onClick={() => addItemToCart(item)}>+</button>
+                        onClick={() => handleAddToCart(item)}>+</button>
                     </div>
                     <div className='price text-right'>
                       $ {item.price.toFixed(2)}
@@ -51,7 +59,7 @@ const CheckoutComponent = () => {
                     <div className='remove-button text-center'>
                       <button
                         type='button'
-                        onClick={() => removeOrDecreaseItem(item, true)}
+                        onClick={() => handleRemoveOrDecrease(item, true)}
                       >&#10005;</button>
                     </div>
                   </div>
