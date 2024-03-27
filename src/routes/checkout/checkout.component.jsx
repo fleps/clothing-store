@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { addItemToCart, removeOrDecreaseItem } from '../../store/minicart.reducer';
 import { selectBagTotalPrice, selectCartItems } from '../../store/minicart.selector';
+import PaymentFormComponent from '../../components/payment-form/payment-form.component';
 
 import './checkout.styles.scss';
-import { Link } from 'react-router-dom';
 
 const CheckoutComponent = () => {
   const dispatch = useDispatch();
@@ -68,7 +69,8 @@ const CheckoutComponent = () => {
             }
             <div className='total'>
               Total: $ {bagTotalPrice.toFixed(2)}
-            </div>
+              </div>
+              <PaymentFormComponent />
           </>
         )
       }
