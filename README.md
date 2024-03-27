@@ -25,7 +25,8 @@ The course is not updated to use latest technologies, so I challenged myself to 
 - Login / Registration using Firebase auth with Google and Email/Password options
 - Initially using `useContext` for Authentication, Products list and Minicart show/hide/render.
   - Refactor #1: Context changes, converting `useStates` inside the Context to `useReducer`
-  - Refactor #2: Contexts gets replaced by using Redux. `reselect` added to the project to memoize the category array and avoid recreating it without need and unnecessart re-renders.
+  - Refactor #2: Contexts gets replaced by using Redux. `reselect` added to the project to memoize the category array and avoid recreating it without need and unnecessart re-renders. Redux-thunk and Redux-Saga examples.
+  - Refactor #3: Manual Redux reworked to use Redux-Toolkit
 - Shop / Category pages with functional Add To Cart button + Minicart + Bag icon counter
 - Cart/Minicart quantity changes + product removal + counter update
 - Categories data comes from Firebase.

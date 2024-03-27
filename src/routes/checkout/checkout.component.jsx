@@ -11,8 +11,8 @@ const CheckoutComponent = () => {
   const cartItems = useSelector(selectCartItems);
   const bagTotalPrice = useSelector(selectBagTotalPrice);
 
-  const handleAddToCart = (product) => dispatch(addItemToCart(cartItems, product));
-  const handleRemoveOrDecrease = (product, toRemove) => dispatch(removeOrDecreaseItem(cartItems, product, toRemove));
+  const handleAddToCart = (product) => dispatch(addItemToCart(product));
+  const handleRemoveOrDecrease = (product, toRemove) => dispatch(removeOrDecreaseItem(product, toRemove));
 
   return (
     <div className='container checkout-container'>

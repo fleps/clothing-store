@@ -1,17 +1,15 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addItemToCart, toggleMinicart } from '../../store/minicart.reducer';
-import { selectCartItems } from '../../store/minicart.selector';
 
 import Button from '../button/button.component';
 import './product-card.styles.scss';
 
 const ProductCard = ({ product }) => {
   const { name, imageUrl, price } = product;
-  const cartItems = useSelector(selectCartItems);
   const dispatch = useDispatch();
 
   const addProductToCart = () => {
-    dispatch(addItemToCart(cartItems, product));
+    dispatch(addItemToCart(product));
     dispatch(toggleMinicart(true));
   };
 

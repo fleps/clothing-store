@@ -1,13 +1,10 @@
+import { createSlice } from '@reduxjs/toolkit';
+
 const MINICART_INITIAL_STATE = {
   openMinicart: false,
   cartItems: [],
   bagCount: 0,
   bagTotalPrice: 0
-}
-
-const MINICART_ACTION_TYPES = {
-  SET_CAR_ITEMS: 'SET_CAR_ITEMS',
-  TOGGLE_MINICART: 'TOGGLE_MINICART'
 }
 
 const handleItemAdd = (cartItems, productToAdd) => {
@@ -55,6 +52,27 @@ const handleRemoveOrDecreaseItem = (cartItems, productToModify, directRemove = f
   }
 }
 
+export const minicartSlice = createSlice({
+  name: 'minicart',
+  initialState: MINICART_INITIAL_STATE,
+  reducers: {
+    addItemToCart(state, action) {
+      state.cartItems = handleItemAdd(state.cartItems, action.payload);
+    },
+    removeOrDecreaseItem(state, action) {
+      state.cartItems = handleRemoveOrDecreaseItem(state.cartItems, action.payload);
+    },
+    toggleMinicart(state, action) {
+      state.openMinicart = action.payload;
+    }
+  }
+});
+
+export const { addItemToCart, removeOrDecreaseItem, toggleMinicart } = minicartSlice.actions;
+export const minicartReducer = minicartSlice.reducer;
+
+/* Old manual Redux implementation
+
 export const toggleMinicart = (boolean) => {
   return { type: MINICART_ACTION_TYPES.TOGGLE_MINICART, payload: boolean }
 };
@@ -86,4 +104,4 @@ export const minicartReducer = (state = MINICART_INITIAL_STATE, action = {}) => 
     default:
       return state;
   }
-}
+} */

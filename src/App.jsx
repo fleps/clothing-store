@@ -20,7 +20,8 @@ const App = () => {
       if (user) {
         createUserDocFromAuth(user);
       }
-      dispatch(setCurrentUser(user));
+      const pickedUser = user && (({ accessToken, email }) => ({ accessToken, email }))(user);
+      dispatch(setCurrentUser(pickedUser));
     })
     return unsubscribe;
   }, []); // eslint-disable-line react-hooks/exhaustive-deps

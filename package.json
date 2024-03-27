@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.2",
     "firebase": "^10.9.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
