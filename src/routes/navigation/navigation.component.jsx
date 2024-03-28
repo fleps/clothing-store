@@ -20,9 +20,10 @@ const Navigation = () => {
           <div className='nav-links-container'>
             <Link className='nav-link' to={'/shop'}>Shop</Link>
             {
-              !currentUser ? (
-                <Link className='nav-link' to={'/login'}>Login</Link>
-              ) : (
+              currentUser === 'logged-out' && <Link className='nav-link' to={'/login'}>Login</Link>
+            }
+            {
+              (currentUser !== null && currentUser !== 'logged-out') && (
                 <span onClick={logOutUser} className='nav-link'>Logout</span>
               )
             }

@@ -27,10 +27,10 @@ const Minicart = () => {
 
   return (
     <div
-      className={
-        `minicart-container
-        ${(openMinicart && location.pathname !== '/checkout')
-          ? 'to-show' : 'to-hide'}`}>
+      className={`minicart-container ${
+        (openMinicart && location.pathname !== '/checkout') && 'to-show'
+      }`}
+    >
       <div className='minicart-content'>
         <button type='button' className='close-minicart' onClick={closeMinicart}>&#10005;</button>
         {

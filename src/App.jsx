@@ -20,7 +20,7 @@ const App = () => {
       if (user) {
         createUserDocFromAuth(user);
       }
-      const pickedUser = user && (({ accessToken, email }) => ({ accessToken, email }))(user);
+      const pickedUser = user ? (({ accessToken, email }) => ({ accessToken, email }))(user) : 'logged-out';
       dispatch(setCurrentUser(pickedUser));
     })
     return unsubscribe;
@@ -30,9 +30,9 @@ const App = () => {
     <Routes>
       <Route path='/' element={<Navigation />}>
         <Route index element={<Home />} />
-        <Route path='/shop/*' element={<Shop />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/checkout' element={<CheckoutComponent />} />
+        <Route path='shop/*' element={<Shop />} />
+        <Route path='login' element={<Login />} />
+        <Route path='checkout' element={<CheckoutComponent />} />
       </Route>
     </Routes>
   )

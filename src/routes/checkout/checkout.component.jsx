@@ -1,28 +1,41 @@
+import { useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link, useLocation } from 'react-router-dom';
 
 import { addItemToCart, removeOrDecreaseItem } from '../../store/minicart.reducer';
 import { selectBagTotalPrice, selectCartItems } from '../../store/minicart.selector';
 
 import './checkout.styles.scss';
-import { Link } from 'react-router-dom';
 
 const CheckoutComponent = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
   const bagTotalPrice = useSelector(selectBagTotalPrice);
+  const location = useLocation();
 
   const handleAddToCart = (product) => dispatch(addItemToCart(product));
-  const handleRemoveOrDecrease = (product, toRemove) => dispatch(removeOrDecreaseItem(product, toRemove));
+  const handleRemoveOrDecrease = (product, directRemove = false) => dispatch(removeOrDecreaseItem({ product, directRemove }));
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top:0, left:0, behavior: "instant" });
+  }, [location.pathname]);
 
   return (
-    <div className='container checkout-container'>
+    <div className={`container checkout-container ${!cartItems.length && 'empty-container'}`}>
       <h1>Checkout</h1>
       {
+        cartItems.length > 0 && (
+          <div className='total'>
+            <span>Total:</span> $ {bagTotalPrice.toFixed(2)}
+          </div>
+        )
+      }
+      {
         !cartItems.length ? (
-          <>
+          <div className='empty-checkout'>
             <h2>Your Checkout is empty</h2>
             <Link className='button-container' to={'/shop'}>Go Shopping</Link>
-          </>
+          </div>
         ) : (
           <>
             <div className='checkout-header semibold-barlow-cond'>
@@ -66,9 +79,6 @@ const CheckoutComponent = () => {
                 )
               })
             }
-            <div className='total'>
-              Total: $ {bagTotalPrice.toFixed(2)}
-            </div>
           </>
         )
       }

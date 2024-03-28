@@ -60,7 +60,8 @@ export const minicartSlice = createSlice({
       state.cartItems = handleItemAdd(state.cartItems, action.payload);
     },
     removeOrDecreaseItem(state, action) {
-      state.cartItems = handleRemoveOrDecreaseItem(state.cartItems, action.payload);
+      const { product, directRemove } = action.payload;
+      state.cartItems = handleRemoveOrDecreaseItem(state.cartItems, product, directRemove);
     },
     toggleMinicart(state, action) {
       state.openMinicart = action.payload;

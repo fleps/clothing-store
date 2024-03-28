@@ -9,14 +9,15 @@
   right: 22px;
   z-index: 5;
   box-shadow: 5px 5px 10px #00000070;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 150ms ease-in, visibility 0s;
+  transition-delay: 0ms, 150ms;
 
   &.to-show {
-    animation: inAnimation 150ms ease-in
-  }
-
-  &.to-hide {
-    animation: outAnimation 100ms ease-out;
-    animation-fill-mode: forwards
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0ms, 0ms;
   }
 
   .minicart-content {
@@ -61,25 +62,3 @@
     justify-content: center;
   }
 }
-
-@keyframes inAnimation {
-  0% {
-    opacity: 0;
-    visibility: hidden;
-  }
-  100% {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@keyframes outAnimation {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-

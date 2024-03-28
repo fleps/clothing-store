@@ -2,8 +2,7 @@ import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { getCategories } from '../../utils/firebase/firebase.utils';
-import { setCategories } from '../../store/category.reducer';
+import { fetchCategories } from '../../store/category.reducer';
 import CategoryListPage from '../category-list-page/category-list-page.component';
 import Category from '../category/category.component';
 
@@ -15,13 +14,9 @@ const Shop = () => {
   useEffect(() => {
     let isApiSubscribed = true;
 
-    const getCategoriesMap = async () => {
-      if (isApiSubscribed) {
-        const categoriesArray = await getCategories();
-        dispatch(setCategories(categoriesArray));
-      }
+    if (isApiSubscribed) {
+      dispatch(fetchCategories());
     }
-    getCategoriesMap();
 
     return () => {
       isApiSubscribed = false;
