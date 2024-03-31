@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { Middleware, configureStore } from "@reduxjs/toolkit";
 import logger from 'redux-logger';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
@@ -6,7 +6,13 @@ import storage from 'redux-persist/lib/storage';
 
 import { rootReducer } from './root-reducer';
 
-const middleWares = [process.env.NODE_ENV !== 'production' && logger].filter(Boolean);
+export type RootState = ReturnType<typeof rootReducer>;
+
+const middleWares: Array<Middleware<object, RootState>> = [];
+
+if (process.env.NODE_ENV !== 'production' && logger) {
+  middleWares.push(logger);
+}
 
 const persistConfig = {
   key: 'root',
@@ -24,6 +30,8 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+
+
 
 
 /* Old implementation before REDUX-TOOLKIT

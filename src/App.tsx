@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 
-import { authChangedListener, createUserDocFromAuth } from './utils/firebase/firebase.utils.js';
-import { setCurrentUser } from './store/user.reducer.js';
+import { authChangedListener, createUserDocFromAuth } from './utils/firebase/firebase.utils';
+import { setCurrentUser } from './store/user.reducer';
 
-import Navigation from './routes/navigation/navigation.component.jsx';
+import Navigation from './routes/navigation/navigation.component';
 import Home from './routes/home/home.component';
-import Login from './routes/login/login.component.jsx';
-import Shop from './routes/shop/shop.component.jsx';
-import CheckoutComponent from './routes/checkout/checkout.component.jsx';
+import Login from './routes/login/login.component';
+import Shop from './routes/shop/shop.component';
+import CheckoutComponent from './routes/checkout/checkout.component';
 
 const App = () => {
 
