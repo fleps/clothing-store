@@ -1,4 +1,5 @@
-# (WIP) Clothing Store v1 | A React E-commerce custom project
+# (TS - WIP) Clothing Store v1 | A React E-commerce custom project
+## TypeScript version - wip
 
 React basic e-commerce store, build as part of the course **"Complete React Developer"** from _"Zero To Master"_. (PS: read the *About the Course* section down below)
 
