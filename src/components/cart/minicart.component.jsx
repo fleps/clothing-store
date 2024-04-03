@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -8,7 +8,8 @@ import { toggleMinicart } from '../../store/minicart.reducer';
 import CartItem from './cart-item.component.jsx';
 import './minicart.styles.scss';
 
-const Minicart = () => {
+// eslint-disable-next-line react/display-name
+const Minicart = memo(() => {
   const dispatch = useDispatch();
   const location = useLocation();
   const openMinicart = useSelector(selectOpenMinicart);
@@ -21,9 +22,9 @@ const Minicart = () => {
     }
   }, [location]); //eslint-disable-line react-hooks/exhaustive-deps
 
-  const closeMinicart = () => {
+  const closeMinicart = useCallback(() => {
     dispatch(toggleMinicart(false))
-  }
+  }, []);//eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div
@@ -53,6 +54,6 @@ const Minicart = () => {
       </div>
     </div>
   );
-}
+})
 
 export default Minicart;

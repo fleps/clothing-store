@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import {
   signInWithGooglePopup,
   loginUserWithEmailPwd
@@ -16,13 +16,13 @@ const LoginForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  const clearForm = () => {
+  const clearForm = useCallback(() => {
     setFormFields(defaultFormFields);
-  };
+  }, []);
 
-  const loginWithGoogle = async () => {
+  const loginWithGoogle = useCallback(async () => {
     await signInWithGooglePopup();
-  };
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

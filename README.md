@@ -28,6 +28,10 @@ My React experience has been on and off as my career led to be a Senior Frontend
 - Shop / Category pages with functional Add To Cart button + Minicart + Bag icon counter
 - Cart/Minicart quantity changes + product removal + counter update
 - Categories data comes from Firebase.
+- Code performance improvements:
+  - added `useCallback` to avoid redefininig functions;
+  - added `memo` to some components to avoind unnecessary re-renders;
+  - added react `lazy` and `Suspense` to App for better bundle/code splitting;
 
 ## Extra features / learning by me (not part of the course)
 - Products have currency and proper price format.

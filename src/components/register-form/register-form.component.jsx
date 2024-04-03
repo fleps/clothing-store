@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 import { createUserWithEmailPwd, createUserDocFromAuth } from '../../utils/firebase/firebase.utils';
@@ -18,12 +18,12 @@ const RegisterForm = () => {
   // Destructure the passed object above to have their values as variables
   const { displayName, email, password, confirmPassword } = formFields;
 
-  const clearForm = () => {
+  const clearForm = useCallback(() => {
     setFormFields(defaultFormFields);
-  };
+  }, []);
 
   // Handle the submit, async as it uses external auth
-  const handleSubmit = async (event) => {
+  const handleSubmit = useCallback(async (event) => {
     event.preventDefault();
 
     //Verify is password matches, can extend this to add more checks like format, length,etc
@@ -49,7 +49,7 @@ const RegisterForm = () => {
         console.log(`User creation error: ${error.message}`)
       }
     }
-  };
+  }, [formFields]); //eslint-disable-line react-hooks/exhaustive-deps
 
   // Basic function called by the inputs onChange event
   const handleChange = (event) => {

@@ -1,6 +1,9 @@
+import { memo } from 'react';
+
 import './cart-item.styles.scss';
 
-const CartItem = ({ cartItem }) => {
+// eslint-disable-next-line react/display-name
+const CartItem = memo(({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
   return (
     <div className='minicart-item'>
@@ -14,6 +17,6 @@ const CartItem = ({ cartItem }) => {
       </div>
     </div>
   );
-}
+})
 
 export default CartItem;
