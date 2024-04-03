@@ -1,6 +1,6 @@
 import './button.styles.scss';
 
-const Button = ({ label, style, ...otherProps }) => {
+const Button = ({ label = 'dummy button', style = '', ...otherProps }) => {
   return (
     <button
       className={`button-container ${style}`}

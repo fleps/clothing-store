@@ -1,6 +1,10 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
+  env: {
+    browser: true,
+    es2020: true,
+    "jest/globals": true
+  },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -10,7 +14,7 @@ module.exports = {
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'jest'],
   rules: {
     'react/prop-types': 0,
     'react/jsx-no-target-blank': 'off',

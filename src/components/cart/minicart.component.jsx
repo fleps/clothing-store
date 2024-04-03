@@ -28,6 +28,7 @@ const Minicart = memo(() => {
 
   return (
     <div
+      data-testid='minicart'
       className={`minicart-container ${
         (openMinicart && location.pathname !== '/checkout') && 'to-show'
       }`}
