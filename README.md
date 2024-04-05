@@ -32,7 +32,7 @@ My React experience has been on and off as my career led to be a Senior Frontend
   - added `useCallback` to avoid redefininig functions;
   - added `memo` to some components to avoind unnecessary re-renders;
   - added react `lazy` and `Suspense` to App for better bundle/code splitting;
-- Added Unit Test for basic testing + Redux components.
+- Added Unit Test for basic testing + Redux Reducer and Selectors.
 
 ## Extra features / learning by me (not part of the course)
 - Products have currency and proper price format.
@@ -51,7 +51,7 @@ My React experience has been on and off as my career led to be a Senior Frontend
 - Added **Redux-Persist** for minicart with **Redux-Toolkit**.
 - Added Loading element on categories async fecth using **Redux-Toolkit** `createAsyncThunk` approach.
 - Added scroll position reset when navigating to checkout
-- Unit Test added with **Vitest** + **Testing-Library** + **Jest** as I built the project using Vite and not CRA.
+- Unit Test added with **Vitest** + **Testing-Library** + as I built the project using Vite and not CRA.
 
 ## About the Course
 While I'm still doing the course and plan to finish all modules, I'm not sure I recommend it. I can't judge the React part itself too much, and the course still has its values to introduce many different topics needed for someone wanting to learn React, but I expected way more from it.
