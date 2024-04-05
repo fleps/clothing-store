@@ -6,8 +6,11 @@ export default defineConfig({
   plugins: [react()],
   base: '/clothing-store/',
   test: {
-    environment: 'jsdom',
     globals: true,
-    setupFiles: './src/setupTests.js'
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.js',
+    coverage: {
+      provider: 'v8'
+    }
   }
 })

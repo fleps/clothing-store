@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import Minicart from '../minicart.component';
-import { renderWithProviders } from '../../../utils/test/test.utils';
+import Minicart from '../components/cart/minicart.component';
+import { renderWithProviders } from '../utils/test/test.utils';
 import { expect } from 'vitest';
 
 describe('Minicart Tests', () => {

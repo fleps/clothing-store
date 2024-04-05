@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import { getCategories } from '../utils/firebase/firebase.utils';
 
-const CATEGORIES_INITIAL_STATE = {
+export const CATEGORIES_INITIAL_STATE = {
   categories: [],
   isLoading: true,
   error: null
