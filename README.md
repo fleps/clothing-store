@@ -1,16 +1,14 @@
-# (WIP) Clothing Store v1 | A React E-commerce custom project
+# Clothing Store v1 | A React E-commerce custom project
 
 React basic e-commerce store, build as part of the course **"Complete React Developer"** from _"Zero To Master"_. (PS: read the *About the Course* section down below)
 
 My React experience has been on and off as my career led to be a Senior Frontend Developer on other platforms (Salesforce SFCC) that don't use React, so I decided to get an extensive course to challenge improve and expand my experience with it.
 
-**Work In Progress**
-
 » Open the *current version here: https://fleps.github.io/clothing-store/
 
 *Published version is always based on the code from the [release branch](https://github.com/fleps/clothing-store/tree/releases).
 
-## Project Technical Details
+## 1. Project Technical Details
 
 - Node v18.16
 - Project Boilerplate created using [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) v4.2 (Vite 5.1) (the course uses CRA)
@@ -19,7 +17,7 @@ My React experience has been on and off as my career led to be a Senior Frontend
 - Sass v1.72
 - Firebase v10.9
 
-## Features (as part of the course)
+## 2. Features (as part of the course)
 - Login / Registration using Firebase auth with Google and Email/Password options
 - Initially using `useContext` for Authentication, Products list and Minicart show/hide/render.
   - Refactor #1: Context changes, converting `useStates` inside the Context to `useReducer`
@@ -34,7 +32,7 @@ My React experience has been on and off as my career led to be a Senior Frontend
   - added react `lazy` and `Suspense` to App for better bundle/code splitting;
 - Added Unit Test for basic testing + Redux Reducer and Selectors.
 
-## Extra features / learning by me (not part of the course)
+## 3. Extra features and customizations added by me (not part of the course)
 - Products have currency and proper price format.
 - Minicart open / close improvements:
   - Minicart auto opens when adding a product to the bag (if the user is not on Cart page). Very basic for e-commerce.
@@ -61,12 +59,17 @@ My React experience has been on and off as my career led to be a Senior Frontend
   - Added site footer with bottom position.
 
 ## About the Course
-While I'm still doing the course and plan to finish all modules, I'm not sure I recommend it. I can't judge the React part itself too much, and the course still has its values to introduce many different topics needed for someone wanting to learn React, but I expected way more from it.
+Now that I finished the course, I'm not sure I recommend it. I can't judge the React part itself too much, and the course still has its values to introduce many different topics needed for someone wanting to learn React, but I expected way more from it.
 
 On the pure Front-End side of things (proper UX for e-commerce sites, good practices for HTML/JS/CSS, responsive layout) the course **lacks tremendously** and **actually teaches bad practices** (double array transverse, nesting divs inside spans, attaching onClick events do spans/divs...).
 
-Also, the teaching method can be frustrating as it's based on refactoring over and over the same features (without explaining that this was going to happen). This resulted in features being developed with incomplete solutions on a specific approach, and then in a few lessons it was completely refactored to show another way, but always with some flaw. At the end, it becomes overwhelming and you not clear what is the best way to do XYZ feature.
+Also, the teaching method can be frustrating as it's based on refactoring over and over the same features (without explaining that this was going to happen). This resulted in features being developed with incomplete solutions on a specific approach, and then in a few lessons it was completely refactored to show another way, but always with some flaw. At the end, it becomes overwhelming and it's not clear what is the best way to do XYZ feature.
 
-## What's Next
-My idea is to keep working on this to finish all modules and at the end build a "v2" that resembles more an e-commerce site, with better (AND RESPONSIVE)  UI, more features and refactoring some things the course taught on a way that doesn't seems the best approach according to my readings.
+## v1 Completed
+The project is now completed, I've added quite a few customizations (read section 3), specially on the UI side, which I'm satisfied with.
+
+Maybe in I'll add more functionalities on a new version in the future, who knows.
+
+
+
 
