@@ -29,7 +29,7 @@ My React experience has been on and off as my career led to be a Senior Frontend
 - Cart/Minicart quantity changes + product removal + counter update
 - Categories data comes from Firebase.
 - Code performance improvements:
-  - added `useCallback` to avoid redefininig functions;
+  - added `useCallback` to avoid redefining functions;
   - added `memo` to some components to avoind unnecessary re-renders;
   - added react `lazy` and `Suspense` to App for better bundle/code splitting;
 - Added Unit Test for basic testing + Redux Reducer and Selectors.
@@ -47,18 +47,25 @@ My React experience has been on and off as my career led to be a Senior Frontend
 - Semantic / accessible HTML (course code has divs nested into spans, divs/spans having click events...)
 - Optimized arrays methods, course teaches bad practices doing 2 (or even more) transverse on the same arrays for no reason.
 - Github Actions Workflow implemented to auto-publish when a new version gets pushed to /releases branch
-- Navigation style to be position fixed and with glass effect.
 - Added **Redux-Persist** for minicart with **Redux-Toolkit**.
-- Added Loading element on categories async fecth using **Redux-Toolkit** `createAsyncThunk` approach.
+- Added Loading element on categories async fetch using **Redux-Toolkit** `createAsyncThunk` approach.
 - Added scroll position reset when navigating to checkout
 - Unit Test added with **Vitest** + **Testing-Library** + as I built the project using Vite and not CRA.
+- Site UI / CSS / Styles customized
+  - Navigation fixed position
+  - Minicart shadow, fixed position
+  - Round corners and shadows added on many elements
+  - Implemented proper mobile/responsive behavior/styles
+  - Checkout total element has fixed positions for better UX if having scroll (different between mobile/desktop)
+  - Product card image effect, shadows, corners and button appearing css animation added
+  - Added site footer with bottom position.
 
 ## About the Course
 While I'm still doing the course and plan to finish all modules, I'm not sure I recommend it. I can't judge the React part itself too much, and the course still has its values to introduce many different topics needed for someone wanting to learn React, but I expected way more from it.
 
 On the pure Front-End side of things (proper UX for e-commerce sites, good practices for HTML/JS/CSS, responsive layout) the course **lacks tremendously** and **actually teaches bad practices** (double array transverse, nesting divs inside spans, attaching onClick events do spans/divs...).
 
-Also, the teaching method can be frustrating as it's based on refactoring over and over the same features (without explaining that this was going to happen). This resulted in features being developed with icomplete solutions on a specific approach, and then in a few lessons it was completelly refactored to show another way, but always with some flaw. At the end, it becomes overwhelming and you not clear what is the best way to do XYZ feature.
+Also, the teaching method can be frustrating as it's based on refactoring over and over the same features (without explaining that this was going to happen). This resulted in features being developed with incomplete solutions on a specific approach, and then in a few lessons it was completely refactored to show another way, but always with some flaw. At the end, it becomes overwhelming and you not clear what is the best way to do XYZ feature.
 
 ## What's Next
 My idea is to keep working on this to finish all modules and at the end build a "v2" that resembles more an e-commerce site, with better (AND RESPONSIVE)  UI, more features and refactoring some things the course taught on a way that doesn't seems the best approach according to my readings.

@@ -17,12 +17,12 @@ const ProductCard = ({ product }) => {
     <div className='product-card-container'>
       <div className='img-container'>
         <img src={imageUrl} alt={name} />
+        <Button type='button' style='' label='Add to cart' onClick={addProductToCart} />
       </div>
       <div className='product-footer'>
         <h3 className='name'>{name}</h3>
         <p className='price'>$ {price?.toFixed(2)}</p>
       </div>
-      <Button type='button' style='' label='Add to cart' onClick={addProductToCart} />
     </div>
   );
 }

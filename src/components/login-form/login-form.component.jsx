@@ -5,7 +5,6 @@ import {
 } from '../../utils/firebase/firebase.utils.js';
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
-import './login-form.styles.scss';
 
 const defaultFormFields = {
   email: '',

@@ -14,24 +14,47 @@ html, body {
   margin: 0;
 }
 
+body {
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+
 .container {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px;
+  padding: 0 20px 25px;
+  width: 100%;
+
+  @media only screen and (min-width: 768px ) {
+    padding: 0 20px 50px;
+  }
 
   .navigation + & {
-    margin-top: 95px;
+    padding-top: 95px;
   }
-}
-
-.page-container {
-  padding-bottom: 100px;
 }
 
 a {
   text-decoration: none;
   color: #000;
+
+  &.underline {
+    text-decoration: underline;
+  }
+
+  img {
+    border-style: none;
+    display: block;
+  }
 }
 
 h1 {

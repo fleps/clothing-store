@@ -7,6 +7,7 @@ import { toggleMinicart } from '../../store/minicart.reducer';
 
 import CartItem from './cart-item.component.jsx';
 import './minicart.styles.scss';
+import './../button/button.styles.scss';
 
 // eslint-disable-next-line react/display-name
 const Minicart = memo(() => {

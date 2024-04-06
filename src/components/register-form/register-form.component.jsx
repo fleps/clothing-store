@@ -2,7 +2,6 @@ import { useCallback, useState } from 'react';
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 import { createUserWithEmailPwd, createUserDocFromAuth } from '../../utils/firebase/firebase.utils';
-import './register-form.styles.scss';
 
 // Create an object with the form fields names and empty initial value, only one generic useState can be used
 const defaultFormFields = {

@@ -1,0 +1,27 @@
+.footer {
+  background-color: #e7e7e7;
+  padding: 30px 20px;
+  margin: auto 0 0;
+  max-width: 100%;
+
+  .footer-content {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media only screen and (max-width: 1140px ) {
+    .checkout-container + & {
+      margin: auto 0 53px;
+    }
+  }
+
+  .footer-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+}

@@ -6,6 +6,7 @@ import Minicart from '../../components/cart/minicart.component.jsx';
 import { logOutUser } from '../../utils/firebase/firebase.utils';
 import Logo from "../../assets/crown.svg";
 import './navigation.styles.scss';
+import FooterComponent from '../../components/footer/footer.component.jsx';
 
 const Navigation = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -33,6 +34,7 @@ const Navigation = () => {
         </div>
       </div>
       <Outlet />
+      <FooterComponent />
     </>
   );
 };
