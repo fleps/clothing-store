@@ -28,7 +28,7 @@ My React experience has been on and off as my career led to be a Senior Frontend
 - Categories data comes from Firebase.
 - Code performance improvements:
   - added `useCallback` to avoid redefining functions;
-  - added `memo` to some components to avoind unnecessary re-renders;
+  - added `memo` to some components to avoid unnecessary re-renders;
   - added react `lazy` and `Suspense` to App for better bundle/code splitting;
 - Added Unit Test for basic testing + Redux Reducer and Selectors.
 
@@ -57,6 +57,10 @@ My React experience has been on and off as my career led to be a Senior Frontend
   - Checkout total element has fixed positions for better UX if having scroll (different between mobile/desktop)
   - Product card image effect, shadows, corners and button appearing css animation added
   - Added site footer with bottom position.
+  - Image lazy loading
+  - Loading properly added on category pages
+  - Scroll position reset to top on "page" change
+  - Smooth CSS animation on "page" change
 
 ## About the Course
 Now that I finished the course, I'm not sure I recommend it. I can't judge the React part itself too much, and the course still has its values to introduce many different topics needed for someone wanting to learn React, but I expected way more from it.
