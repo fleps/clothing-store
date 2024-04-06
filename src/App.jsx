@@ -1,5 +1,5 @@
-import { useEffect, lazy, Suspense } from 'react';
-import { Routes, Route } from "react-router-dom";
+import { useEffect, lazy, Suspense, useLayoutEffect } from 'react';
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 
 import { authChangedListener, createUserDocFromAuth } from './utils/firebase/firebase.utils.js';
@@ -13,7 +13,7 @@ const Shop = lazy(() => import('./routes/shop/shop.component'));
 const CheckoutComponent = lazy(() => import('./routes/checkout/checkout.component'));
 
 const App = () => {
-
+  const location = useLocation();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,6 +26,10 @@ const App = () => {
     })
     return unsubscribe;
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top:0, left:0, behavior: "instant" });
+  }, [location.pathname]);
 
   return (
     <Suspense fallback={<SpinnerComponent />}>

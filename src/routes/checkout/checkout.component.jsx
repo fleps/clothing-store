@@ -1,6 +1,5 @@
-import { useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { addItemToCart, removeOrDecreaseItem } from '../../store/minicart.reducer';
 import { selectBagTotalPrice, selectCartItems } from '../../store/minicart.selector';
@@ -11,14 +10,9 @@ const CheckoutComponent = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
   const bagTotalPrice = useSelector(selectBagTotalPrice);
-  const location = useLocation();
 
   const handleAddToCart = (product) => dispatch(addItemToCart(product));
   const handleRemoveOrDecrease = (product, directRemove = false) => dispatch(removeOrDecreaseItem({ product, directRemove }));
-
-  useLayoutEffect(() => {
-    window.scrollTo({ top:0, left:0, behavior: "instant" });
-  }, [location.pathname]);
 
   return (
     <div className={`container checkout-container ${!cartItems.length && 'empty-container'}`}>

@@ -33,6 +33,8 @@ body {
   margin-right: auto;
   padding: 0 20px 25px;
   width: 100%;
+  opacity: 0;
+  animation: 0.40s ease-out forwards fade-in;
 
   @media only screen and (min-width: 768px ) {
     padding: 0 20px 50px;
@@ -40,6 +42,15 @@ body {
 
   .navigation + & {
     padding-top: 95px;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
   }
 }
 

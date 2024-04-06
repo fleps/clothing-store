@@ -17,12 +17,12 @@ const Category = () => {
   }, [category, categoriesMap]);
 
   return (
-    <div className='container page-container'>
+    <>
       {
         isLoading ? (
           <SpinnerComponent />
         ) : (
-          <>
+          <div className='container page-container'>
             <h2 className='cat-page-name'>
               {category}
               <span className='product-count'>
@@ -36,10 +36,10 @@ const Category = () => {
                   )
               })}
             </div>
-          </>
+          </div>
         )
       }
-    </div>
+    </>
   );
 }
 
