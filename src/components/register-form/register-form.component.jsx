@@ -63,7 +63,7 @@ const RegisterForm = () => {
   return (
     <div className='register-container'>
       <h2>Don&apos;t have an account?</h2>
-      <span>Login with your email and password</span>
+      <span>Register filling the information below.</span>
       <form onSubmit={handleSubmit}>
           {/* set each field value to the destructured values from the top */}
 
