@@ -19,7 +19,7 @@ const Navigation = () => {
             <img src={Logo} alt='' className=''/>
           </Link>
           <div className='nav-links-container'>
-            <Link className='nav-link' to={'/shop'}>Shop</Link>
+            <Link className='nav-link' to={'/shop'}>Shop All</Link>
             {
               currentUser === 'logged-out' && <Link className='nav-link' to={'/login'}>Login</Link>
             }

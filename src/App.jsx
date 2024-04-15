@@ -10,7 +10,7 @@ const Navigation = lazy(() => import('./routes/navigation/navigation.component')
 const Home = lazy(() => import('./routes/home/home.component'));
 const Login = lazy(() => import('./routes/login/login.component'));
 const Shop = lazy(() => import('./routes/shop/shop.component'));
-const CheckoutComponent = lazy(() => import('./routes/checkout/checkout.component'));
+const CartComponent = lazy(() => import('./routes/cart/cart.component'));
 
 const App = () => {
   const location = useLocation();
@@ -39,7 +39,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path='shop/*' element={<Shop />} />
           <Route path='login' element={<Login />} />
-          <Route path='checkout' element={<CheckoutComponent />} />
+          <Route path='cart' element={<CartComponent />} />
         </Route>
       </Routes>
     </Suspense>

@@ -31,7 +31,7 @@ const Minicart = memo(() => {
     <div
       data-testid='minicart'
       className={`minicart-container ${
-        (openMinicart && location.pathname !== '/checkout') && 'to-show'
+        (openMinicart && location.pathname !== '/cart') && 'to-show'
       }`}
     >
       <div className='minicart-content'>
@@ -49,7 +49,7 @@ const Minicart = memo(() => {
               <div className='minicart-total medium-barlow-cond'>
                 Total: <span>$ {bagTotalPrice.toFixed(2)}</span>
               </div>
-              <Link className='button-container' to={'/checkout'}>Checkout</Link>
+                <Link className='button-container' to={'/cart'}>Go to Cart</Link>
             </>
           )
         }

@@ -4,35 +4,41 @@ import { Link } from 'react-router-dom';
 import { addItemToCart, removeOrDecreaseItem } from '../../store/minicart.reducer';
 import { selectBagTotalPrice, selectCartItems } from '../../store/minicart.selector';
 
-import './checkout.styles.scss';
+import './cart.styles.scss';
 
-const CheckoutComponent = () => {
+const CartComponent = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
   const bagTotalPrice = useSelector(selectBagTotalPrice);
 
-  const handleAddToCart = (product) => dispatch(addItemToCart(product));
+  const handleAddToCart = (product) => {
+    if (product.quantity < 10) {
+      dispatch(addItemToCart(product));
+    }
+  };
   const handleRemoveOrDecrease = (product, directRemove = false) => dispatch(removeOrDecreaseItem({ product, directRemove }));
 
   return (
-    <div className={`container checkout-container ${!cartItems.length && 'empty-container'}`}>
-      <h1>Checkout</h1>
+    <div className={`container cart-container ${!cartItems.length && 'empty-container'}`}>
       {
         cartItems.length > 0 && (
-          <div className='total'>
-            <span>Total:</span> $ {bagTotalPrice.toFixed(2)}
-          </div>
+          <>
+            <h1>Cart</h1>
+            <div className='total'>
+              <span>Total:</span> $ {bagTotalPrice.toFixed(2)}
+            </div>
+          </>
         )
       }
       {
         !cartItems.length ? (
-          <div className='empty-checkout'>
-            <h2>Your Checkout is empty</h2>
+          <div>
+            <h2>Your Cart is empty</h2>
             <Link className='button-container' to={'/shop'}>Go Shopping</Link>
           </div>
         ) : (
           <>
-            <div className='checkout-header semibold-barlow-cond'>
+            <div className='cart-header semibold-barlow-cond'>
               <div className='header-block'>Product</div>
               <div className='header-block'></div>
               <div className='header-block text-center'>Quantity</div>
@@ -42,7 +48,7 @@ const CheckoutComponent = () => {
             {
               cartItems.map(item => {
                 return (
-                  <div key={item.id} className='checkout-item-container'>
+                  <div key={item.id} className='cart-item-container'>
                     <div className='image-container'>
                       <img src={item.imageUrl} alt='' />
                     </div>
@@ -80,4 +86,4 @@ const CheckoutComponent = () => {
   );
 }
 
-export default CheckoutComponent;
+export default CartComponent;

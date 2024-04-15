@@ -1,4 +1,4 @@
-.checkout-container.container {
+.cart-container.container {
   max-width: 800px;
   display: flex;
   flex-wrap: wrap;
@@ -6,16 +6,14 @@
   position: relative;
 
   &.empty-container {
+    flex: 1;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
   h1 {
     margin: 0;
-  }
-
-  .empty-checkout {
-    min-height: 40vh;
   }
 
   .total {
@@ -49,7 +47,7 @@
     }
   }
 
-  .checkout-header {
+  .cart-header {
     width: 100%;
     padding: 10px 0;
     display: flex;
@@ -69,7 +67,7 @@
   }
 }
 
-.checkout-item-container {
+.cart-item-container {
   width: 100%;
   display: flex;
   min-height: 100px;
@@ -97,6 +95,8 @@
 
   .name {
     font-size: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   button {
@@ -125,7 +125,7 @@
     .value {
       width: 18px;
       text-align: center;
-      margin: 0 10px;
+      margin: 0 2px;
     }
   }
 

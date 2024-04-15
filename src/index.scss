@@ -33,8 +33,8 @@ body {
   margin-right: auto;
   padding: 0 20px 25px;
   width: 100%;
-  opacity: 0;
-  animation: 0.40s ease-out forwards fade-in;
+  /* opacity: 0;
+  animation: 0.40s ease-out forwards fade-in; */
 
   @media only screen and (min-width: 768px ) {
     padding: 0 20px 50px;
@@ -42,6 +42,23 @@ body {
 
   .navigation + & {
     padding-top: 95px;
+
+    &::after {
+      content: '';
+      display: block;
+      opacity: 1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      max-width: 100vw;
+      max-height: 100vh;
+      background: #FFF;
+      pointer-events: none;
+      animation: 0.40s 0.15s ease-out forwards fade-out;
+      z-index: 9;
+    }
   }
 }
 
@@ -50,7 +67,17 @@ body {
     opacity: 0;
   }
   to {
-    opacity: 100;
+    opacity: 1;
+    z-index: -1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
